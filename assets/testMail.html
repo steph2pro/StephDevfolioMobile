@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulaire de contact</title>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "TatCP1H8XZWaha1h4",
+      });
+   })();
+</script>
+<body>
+
+<form action="" class="contact__form">
+  <input type="text" id="nameInput" placeholder="Nom" class="contact__input">
+  <input type="email" id="emailInput" placeholder="Email" class="contact__input">
+  <textarea id="messageInput" cols="30" rows="10" class="contact__input" placeholder="Message"></textarea>
+  <input type="button" value="Envoyer" class="contact__button button">
+</form>
+
+<script src="js/sendMail.js"></script>
+
+</body>
+</html>
