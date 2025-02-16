@@ -11,6 +11,8 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <title>Steph Devfolio </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -58,7 +60,7 @@
                         </mask>
                         <g mask="url(#mask0)">
                             <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
+                            <image class="home__blob-img" x="30" y="60" href="assets/img/perfil.png" style="height:90%;width:80%"/>
                         </g>
                     </svg>
                 </div>
@@ -69,8 +71,8 @@
                 <h2 class="section-title">A Propos de Moi</h2>
 
                 <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/steph.png" alt="">
+                    <div class="skills__container container">
+                        <img src="assets/img/steph.png" alt="" class="work__img">
                     </div>
                     
                     <div>
@@ -92,8 +94,8 @@
 
                 <div class="skills__container bd-grid">          
                     <div>
-                        <h2 class="skills__subtitle">Competences Profesionel</h2>
-                        <p class="skills__text">
+                        <h2 class="skills__subtitlemod">Competences Profesionel</h2>
+                        <p class="skills__textmodmod">
                             Ma polyvalence me permet de jongler avec différents langages de programmation
                              tels que HTML, CSS (bootstrap et Tailwind CSS), 
                              JavaScript (typeScript, Angular JS,vueJS,React JS et Adonis JS), 
@@ -162,22 +164,21 @@
             <!--===== WORK =====-->
             <section class="work section" id="work">
                 <h2 class="section-title">Mes Travaux</h2>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/workMillearnia.png" class="img-fluid work__img" alt="Image" style="height:60vh">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Application Millearnia
-                            <p>
-                                <a href="https://github.com/steph2pro/Millearnia-web.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            Millearnia est une application d'orientation scolaire conçue pour aider les étudiants à choisir leur parcours académique et professionnel en fonction de leurs compétences et intérêts.  
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Projet 1 -->
+                        <div class="swiper-slide">
+                            <div class="skills__container bd-grid container">
+                                <img src="assets/img/workMillearnia.png" class="img-fluid work__img" alt="Image">  
+                                <div>
+                                    <h2 class="skills__subtitlemod">Application Millearnia</h2>
+                                    <p class="skills__textmodmod">
+                                        Millearnia est une application d'orientation scolaire conçue pour aider les étudiants à choisir leur parcours académique et professionnel en fonction de leurs compétences et intérêts.  
                             Elle propose une interface intuitive et moderne avec une expérience utilisateur optimisée grâce à des outils performants.
                         </p>
-                        <p class="skills__text">
+                        <p class="skills__textmod">
                             Technologies utilisées :
-                            <ul>
+                            <ul id="tech-list" class="hidden">
                                 <li><strong>React</strong> - pour la construction de l'interface utilisateur</li>
                                 <li><strong>Clean Architecture</strong> - pour une organisation modulaire et scalable</li>
                                 <li><strong>React Query</strong> - pour la gestion optimisée des requêtes et du cache</li>
@@ -185,53 +186,56 @@
                                 <li><strong>Transactable</strong> - pour la gestion fluide des transactions de données</li>
                                 <li><strong>Tailwind CSS</strong> - pour un design moderne et réactif</li>
                                 <li><strong>ShadCN</strong> - pour des composants UI élégants et accessibles</li>
+                                <p><a href="https://github.com/steph2pro/Millearnia-web.git" class="btn btn-info">Consulter</a></p>
+                                    
                             </ul>
                         </p>
-                    </div>
-                </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/workAdonis.png" class="img-fluid work__img" alt="Image" style="height:60vh">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Backend de l'application Millearnia
-                            <p>
-                                <a href="https://github.com/steph2pro/backend-architecture.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            Le backend de Millearnia est conçu pour fournir une API robuste et sécurisée permettant de gérer les données des utilisateurs, les recommandations scolaires et les interactions avec l'application.
+                        <button id="toggle-btn" class="btn btn-sm btn-primary">Voir plus</button>
+                            </div>
+                            </div>
+                        </div>
+            
+                        <!-- Projet 2 -->
+                        <div class="swiper-slide">
+                            <div class="skills__container bd-grid container">
+                                <img src="assets/img/workAdonis.png" class="img-fluid work__img" alt="Image">  
+                                <div>
+                                    <h2 class="skills__subtitlemod">Backend de l'application Millearnia</h2>
+                                    <p class="skills__textmodmod">
+                                        Le backend de Millearnia est conçu pour fournir une API robuste et sécurisée permettant de gérer les données des utilisateurs, les recommandations scolaires et les interactions avec l'application.
                             Il repose sur des technologies modernes garantissant performance, scalabilité et sécurité.
                         </p>
-                        <p class="skills__text">
+                        <p class="skills__textmod">
                             Technologies utilisées :
-                            <ul>
+                            <ul id="tech-list" class="hidden">
                                 <li><strong>AdonisJS</strong> - framework backend Node.js avec une architecture MVC</li>
                                 <li><strong>Prisma</strong> - ORM moderne pour une gestion efficace de la base de données</li>
                                 <li><strong>Vine</strong> - pour la validation des données et la sécurité des entrées utilisateur</li>
                                 <li><strong>PostgreSQL (via Supabase)</strong> - base de données relationnelle performante et évolutive</li>
                                 <li><strong>Firebase Authentication</strong> - pour une gestion sécurisée des utilisateurs</li>
                                 <li><strong>Communication API</strong> - API RESTful optimisée pour une interaction fluide avec le frontend</li>
+                                <p><a href="https://github.com/steph2pro/backend-architecture.git" class="btn btn-info">Consulter</a></p>
+                                    
                             </ul>
-                        </p>
-                    </div>
-                </div>
+                                    </p>
+                                    <button id="toggle-btn" class="btn btn-sm btn-primary">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Projet 3 -->
+            <div class="swiper-slide">
                 <div class="skills__container bd-grid container">
-                    <img src="assets/img/workEsmod.png" class="img-fluid work__img" alt="Image" style="height:60vh">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Application de Gestion de l'Institut ESMOD
-                            <p>
-                                <a href="https://github.com/steph2pro/ESMOD-ScoolManagment.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
+                    <img src="assets/img/workEsmod.png" class="img-fluid work__img" alt="ESMOD">
+                    <div>
+                        <h2 class="skills__subtitlemod">Application ESMOD</h2>
+                        <p class="skills__textmodmod">
                             L’application ESMOD est un système de gestion complet pour un institut universitaire.  
                             Elle permet d’administrer les étudiants, les enseignants, les cours, les inscriptions ainsi que la gestion des notes et des emplois du temps.  
                             Développée avec Laravel, elle assure une architecture robuste et sécurisée.
                         </p>
-                        <p class="skills__text">
+                        <p class="skills__textmod">
                             Technologies utilisées :
-                            <ul>
+                            <ul id="tech-list" class="hidden">
                                 <li><strong>Laravel</strong> - framework PHP moderne pour un développement rapide et sécurisé</li>
                                 <li><strong>Blade</strong> - moteur de templates pour des vues dynamiques et modulaires</li>
                                 <li><strong>MySQL</strong> - base de données relationnelle pour gérer les utilisateurs et les informations académiques</li>
@@ -239,54 +243,60 @@
                                 <li><strong>Livewire</strong> - pour des interfaces dynamiques sans rechargement de page</li>
                                 <li><strong>Bootstrap & Tailwind CSS</strong> - pour un design moderne et responsive</li>
                                 <li><strong>Gestion des rôles</strong> - système d’authentification et d’autorisation pour les étudiants, enseignants et administrateurs</li>
+                                <p><a href="https://github.com/steph2pro/ESMOD-ScoolManagment.git" class="btn btn-info">Consulter</a></p>
+                    
                             </ul>
                         </p>
-                    </div>
+                        <button id="toggle-btn" class="btn btn-sm btn-primary">Voir plus</button>
+                        </p>
+                      </div>
                 </div>
-                
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="swiper-slide">
                 <div class="skills__container bd-grid container">
-                    <img src="assets/img/workElearning.png" class="img-fluid work__img" alt="Image"  style="height:60vh">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Application E-Learning
-                            <p>
-                                <a href="https://github.com/steph2pro/e-learning.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
+                    <img src="assets/img/workElearning.png" class="img-fluid work__img" alt="E-learning">
+                    <div>
+                        <h2 class="skills__subtitlemod">Application E-Learning</h2>
+                        <p class="skills__textmodmod">
                             Cette application E-Learning est une plateforme d’apprentissage en ligne permettant aux utilisateurs d’accéder à des cours interactifs, de suivre leur progression et d’interagir avec des formateurs.  
                             Elle est conçue en PHP avec une architecture MVC robuste, assurant modularité et maintenabilité.
                         </p>
-                        <p class="skills__text">
-                            Technologies utilisées :
-                            <ul>
+                        <p class="skills__textmod">
+                            Technologies utilisées :    
+                            <ul id="tech-list" class="hidden">
                                 <li><strong>PHP Orienté Objet</strong> - pour une programmation modulaire et évolutive</li>
                                 <li><strong>Modèle MVC</strong> - pour une séparation claire entre la logique métier, la présentation et les données</li>
                                 <li><strong>MySQL</strong> - base de données relationnelle pour stocker les cours et les utilisateurs</li>
                                 <li><strong>Twig</strong> - moteur de templates pour une gestion flexible des vues</li>
                                 <li><strong>Bootstrap</strong> - pour une interface utilisateur réactive et moderne</li>
                                 <li><strong>Gestion des rôles</strong> - système d’authentification et d’autorisation sécurisé</li>
+                                
+                                <p><a href="https://github.com/steph2pro/e-learning.git" class="btn btn-info">Consulter</a></p>
+                    
                             </ul>
+                        </p>
+                        <button id="toggle-btn" class="btn btn-sm btn-primary">Voir plus</button>
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Projet 5 -->
+            <div class="swiper-slide">
                 <div class="skills__container bd-grid container">
-                    <img src="assets/img/workMessage.png" class="img-fluid work__img" alt="Image" style="height:60vh">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Application de Messagerie et News
-                            <p>
-                                <a href="https://github.com/steph2pro/messageApp.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
+                    <img src="assets/img/workMessage.png" class="img-fluid work__img" alt="Messagerie">
+                    <div>
+                        <h2 class="skills__subtitlemod">Application de Messagerie</h2>
+                        <p class="skills__textmodmod">
                             Cette application combine un système de messagerie instantanée et une plateforme de publication d’actualités.  
                             Les utilisateurs peuvent envoyer des messages privés, créer des publications et interagir via des commentaires et likes.  
                             Elle repose sur une architecture MVC en PHP assurant modularité et scalabilité.
                         </p>
-                        <p class="skills__text">
+                        <p class="skills__textmod">
                             Technologies utilisées :
-                            <ul>
+                            <ul id="tech-list" class="hidden">
                                 <li><strong>PHP Orienté Objet</strong> - pour une structure de code claire et évolutive</li>
                                 <li><strong>Modèle MVC</strong> - pour une séparation logique entre la présentation, les contrôleurs et la base de données</li>
                                 <li><strong>MySQL</strong> - base de données relationnelle pour stocker les utilisateurs, messages et publications</li>
@@ -294,142 +304,201 @@
                                 <li><strong>WebSockets</strong> - pour la messagerie en temps réel</li>
                                 <li><strong>Bootstrap</strong> - pour un design moderne et responsive</li>
                                 <li><strong>Gestion des rôles</strong> - système d’authentification sécurisé avec permissions utilisateur</li>
+                                <p><a href="https://github.com/steph2pro/messageApp.git" class="btn btn-info">Consulter</a></p>
+                   
                             </ul>
                         </p>
-                    </div>
+                        <button id="toggle-btn" class="btn btn-sm btn-primary">Voir plus</button>
+                        </p>
+                         </div>
                 </div>
-                
+            </div>
+             <!-- Projet 6 -->
+            <div class="swiper-slide">
                 <div class="skills__container bd-grid container">
-                    <img src="assets/img/pressing.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            site web de MB-Pressing
-                            <p>
-                                <a href="https://mb-pressing-infos-8owk.onrender.com" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
+                    <img src="assets/img/pressing.JPG" class="img-fluid work__img" alt="MB-Pressing">
+                    <div>
+                        <h2 class="skills__subtitlemod">Site Web MB-Pressing</h2>
+                        <p class="skills__textmodmod">
                             il s'agit du site web de prestation de service de l'entreprise MB-Pressing.
                             c'est un site vitrine avec une partie administrations qui permet a l'administrateur d'ajouter du contenue de facon dynamique
                         </p>
+                        <p><a href="https://mb-pressing-infos-8owk.onrender.com" class="btn btn-info">Consulter</a></p>
                     </div>
                 </div>
+            </div>
+             <!-- Projet 7 -->
+             <div class="swiper-slide">
                 <div class="skills__container bd-grid container">
                     <img src="assets/img/asdev.JPG" class="img-fluid work__img" alt="Image">  
                     <div class="">
-                        <h2 class="skills__subtitle">
+                        <h2 class="skills__subtitlemod">
                             site web de As-DEV
-                            <p>
-                                <a href="https://asdev.onrender.com" class="btn btn-info">Consulter</a>
-                            </p>
                         </h2>
-                        <p class="skills__text">
+                        <p class="skills__textmod">
                             il s'agit du site web de prestation de service de l'entreprise As-DEV.
                             c'est juste un site vitrine 
                         </p>
-                    </div>
-                </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/pressingApp.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Application de gestion de pressing
-                            <p>
-                                <a href="https://github.com/steph2pro/MB-PressingApp2.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            C'est une Application web qui permet de gerer et de controller les differents aspet d'un Pressing.
-                            les fonctionalitees cle de cette application sont: la gestion des clients, la gestion des depots de vertements, la gestion des retraits de vetements, la notification par mail des clients lorsque leurs vetements son pret et bien d'autre fonctionalitees pertinante  
+                        
+                        <p>
+                            <a href="https://asdev.onrender.com" class="btn btn-info">Consulter</a>
                         </p>
                     </div>
                 </div>
+            </div>
+             <!-- Projet 8 -->
+             <div class="swiper-slide">
                 <div class="skills__container bd-grid container">
-                    <img src="assets/img/school.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Application de gestion scolaire
-                            <p>
-                                <a href="https://github.com/steph2pro/school-manager.git" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            il s'agit d'une application web qui permet la gestion d'un etablissement scolaire notament les salles de classe ...
+                    <img src="assets/img/pressing.JPG" class="img-fluid work__img" alt="MB-Pressing">
+                    <div>
+                        <h2 class="skills__subtitlemodmod">Site Web MB-Pressing</h2>
+                        <p class="skills__textmodmod">
+                            Site de prestation de service avec gestion dynamique...
                         </p>
+                        <p><a href="https://mb-pressing-infos-8owk.onrender.com" class="btn btn-info">Consulter</a></p>
                     </div>
                 </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/maquette.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Maquete de site web
-                            <p>
-                                <a href="https://steph2pro-maquette.onrender.com/" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            Ici c'est un modele de site web qui montre l'organisation des elements ainsi la structure et l'animation de ces elements
-                        </p>
+            </div>
+            <!-- Projet 9 -->
+           <div class="swiper-slide">
+               <div class="skills__container bd-grid container">
+                   <img src="assets/img/school.JPG" class="img-fluid work__img" alt="Image">  
+                   <div class="">
+                       <h2 class="skills__subtitlemod">
+                           Application de gestion scolaire
+                           
+                       </h2>
+                       <p class="skills__textmod">
+                           il s'agit d'une application web qui permet la gestion d'un etablissement scolaire notament les salles de classe ...
+                       </p>
+                       <p>
+                           <a href="https://github.com/steph2pro/school-manager.git" class="btn btn-info">Consulter</a>
+                       </p>
+                   </div>
+               </div>
+           </div>
+            
+            <!-- Projet 10 -->
+            <div class="swiper-slide">
+               <div class="skills__container bd-grid container">
+                <img src="assets/img/recherche.JPG" class="img-fluid work__img" alt="Image">  
+                <div class="">
+                    <h2 class="skills__subtitlemod">
+                        Recherche dynamique
+                        
+                    </h2>
+                    <p class="skills__textmod">
+                        il s'agit d'une application de recherche dynamique et fluide utilisants une API
+                    </p>
+                    <p>
+                        <a href="https://apprecherche.onrender.com/" class="btn btn-info">Consulter</a>
+                    </p>
+                   </div>
+               </div>
+           </div>
+            <!-- Projet 11 -->
+            <div class="swiper-slide">
+               <div class="skills__container bd-grid container">
+                <img src="assets/img/maquette.JPG" class="img-fluid work__img" alt="Image">  
+                <div class="">
+                    <h2 class="skills__subtitlemod">
+                        Maquete de site web
+                       
+                    </h2>
+                    <p class="skills__textmod">
+                        Ici c'est un modele de site web qui montre l'organisation des elements ainsi la structure et l'animation de ces elements
+                    </p>
+                    <p>
+                        <a href="https://steph2pro-maquette.onrender.com/" class="btn btn-info">Consulter</a>
+                    </p>
                     </div>
-                </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/todo-list.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            todo list
-                            <p>
-                                <a href="https://steph-todo-list.onrender.com/" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            Il s'agit d'un gestionaire de tache concue en javascript
-                        </p>
-                    </div>
-                </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/recherche.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Recherche dynamique
-                            <p>
-                                <a href="https://apprecherche.onrender.com/" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            il s'agit d'une application de recherche dynamique et fluide utilisants une API
-                        </p>
-                    </div>
-                </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/lacalise.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            Geo-lacalisation
-                            <p>
-                                <a href="" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            c'est une plateforme dynamique de geolocalisation des lieux
-                        </p>
-                    </div>
-                </div>
-                <div class="skills__container bd-grid container">
-                    <img src="assets/img/jeux.JPG" class="img-fluid work__img" alt="Image">  
-                    <div class="">
-                        <h2 class="skills__subtitle">
-                            jeux Nombre_Mystere
-                            <p>
-                                <a href="https://nombre-mistere.onrender.com/" class="btn btn-info">Consulter</a>
-                            </p>
-                        </h2>
-                        <p class="skills__text">
-                            c'est un jeux de question ou le but est de touver le nombre mystere en fonction des orientations et avec un nombre d'essaie limite
-                        </p>
-                    </div>
+               </div>
+           </div>
+            <!-- Projet 12 -->
+            <div class="swiper-slide">
+               <div class="skills__container bd-grid container">
+                   <img src="assets/img/pressingApp.JPG" class="img-fluid work__img" alt="Image">  
+                   <div class="">
+                       <h2 class="skills__subtitlemod">
+                           Application de gestion de pressing
+                          
+                       </h2>
+                       <p class="skills__textmod">
+                           C'est une Application web qui permet de gerer et de controller les differents aspet d'un Pressing.
+                           les fonctionalitees cle de cette application sont: la gestion des clients, la gestion des depots de vertements, la gestion des retraits de vetements, la notification par mail des clients lorsque leurs vetements son pret et bien d'autre fonctionalitees pertinante  
+                       </p>
+                       <p>
+                           <a href="https://github.com/steph2pro/MB-PressingApp2.git" class="btn btn-info">Consulter</a>
+                       </p>
+                   </div>
+               </div>
+           </div>
+            <!-- Projet 13 -->
+           <div class="swiper-slide">
+               <div class="skills__container bd-grid container">
+                <img src="assets/img/lacalise.JPG" class="img-fluid work__img" alt="Image">  
+                <div class="">
+                    <h2 class="skills__subtitlemod">
+                        Geo-lacalisation
+                        
+                    </h2>
+                    <p class="skills__textmod">
+                        c'est une plateforme dynamique de geolocalisation des lieux
+                    </p>
+                    <p>
+                        <a href="" class="btn btn-info">Consulter</a>
+                    </p>
+                   </div>
+               </div>
+           </div>
+           <!-- Projet 14 -->
+           <div class="swiper-slide">
+              <div class="skills__container bd-grid container">
+                <img src="assets/img/todo-list.JPG" class="img-fluid work__img" alt="Image">  
+                <div class="">
+                    <h2 class="skills__subtitlemod">
+                        todo list
+                       
+                    </h2>
+                    <p class="skills__textmod">
+                        Il s'agit d'un gestionaire de tache concue en javascript
+                    </p>
+                    <p>
+                        <a href="https://steph-todo-list.onrender.com/" class="btn btn-info">Consulter</a>
+                    </p>
+                  </div>
+              </div>
+          </div>
+           <!-- Projet 15 -->
+          <div class="swiper-slide">
+              <div class="skills__container bd-grid container">
+                <img src="assets/img/jeux.JPG" class="img-fluid work__img" alt="Image">  
+            <div class="">
+                <h2 class="skills__subtitlemod">
+                    jeux Nombre_Mystere
+                    
+                </h2>
+                <p class="skills__textmod">
+                    c'est un jeux de question ou le but est de touver le nombre mystere en fonction des orientations et avec un nombre d'essaie limite
+                </p>
+                <p>
+                    <a href="https://nombre-mistere.onrender.com/" class="btn btn-info">Consulter</a>
+                </p>
+                  </div>
+              </div>
+          </div> 
+            
+        </div>
+            
+                    <!-- Flèches de navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+            
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
-
+            
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
@@ -465,5 +534,8 @@
         <script src="assets/js/main.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="assets/js/slider.js"> </script>
+        <script src="assets/js/more.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     </body>
 </html>

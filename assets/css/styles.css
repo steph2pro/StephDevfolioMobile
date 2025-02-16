@@ -53,7 +53,9 @@ body {
 h1, h2, p {
   margin: 0;
 }
-
+.hidden {
+  display: none;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -128,6 +130,10 @@ img {
   font-weight: var(--font-semi);
 }
 @media screen and (max-width: 767px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+      display: none !important;
+  }
   .nav__menu {
     position: fixed;
     top: var(--header-height);
@@ -264,6 +270,12 @@ img {
   margin-bottom: var(--mb-2);
 }
 .skills__text {
+  margin-bottom: var(--mb-4);
+}
+.skills__subtitlemod {
+  margin-bottom: var(--mb-2);
+}
+.skills__textmod {
   margin-bottom: var(--mb-4);
 }
 .skills__data {
