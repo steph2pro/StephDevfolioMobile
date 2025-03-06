@@ -307,16 +307,16 @@ img {
   border-radius: 0.5rem;
   z-index: var(--z-back);
 }
-.skills__html {
-  width: 95%;
-}
-.skills__css {
+.skills__flutter {
   width: 85%;
 }
-.skills__js {
-  width: 80%;
+.skills__state {
+  width: 70%;
 }
-.skills__php {
+.skills__bd {
+  width: 75%;
+}
+.skills__api {
   width: 80%;
 }
 .skills__img {

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 1, // Afficher un projet à la fois
       spaceBetween: 10, // Espacement entre les slides
       autoplay: {
-          delay: 3000, // Temps en millisecondes (ici 3 secondes)
+          delay: 30000, // Temps en millisecondes (ici 30 secondes)
           disableOnInteraction: false, // Continue même après interaction
       },
   });

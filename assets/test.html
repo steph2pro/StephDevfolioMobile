@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Mon cadre responsive</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .container {
-      padding: 20px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid blue;
-      border-radius: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider avec Carrousel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+
+        .slider-container {
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .carousel-controls, .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .carousel-controls button, .slider-controls button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .carousel-controls button:hover, .slider-controls button:hover {
+            background: #0056b3;
+        }
+
+        .slide-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="./img/work1.jpg" class="img-fluid" alt="Image">
-      </div>
-      <div class="col-md-6 center-text">
-        <h2>2Titre du texte descriptif</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae odio nec lacus vulputate aliquet. Duis efficitur, urna vitae tincidunt dapibus, libero nunc pellentesque felis, ut malesuada lorem libero ac nunc.</p>
-      </div>
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="https://via.placeholder.com/600x200/ff5733" alt="Image 1">
+                    <img src="https://via.placeholder.com/600x200/33ff57" alt="Image 2">
+                    <img src="https://via.placeholder.com/600x200/3357ff" alt="Image 3">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage(0)">⬅</button>
+                <button onclick="nextImage(0)">➡</button>
+            </div>
+            <div class="slide-title">Slide 1</div>
+        </div>
+
+        <div class="slide">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="https://via.placeholder.com/600x200/ffcc00" alt="Image 4">
+                    <img src="https://via.placeholder.com/600x200/cc00ff" alt="Image 5">
+                    <img src="https://via.placeholder.com/600x200/00ffcc" alt="Image 6">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage(1)">⬅</button>
+                <button onclick="nextImage(1)">➡</button>
+            </div>
+            <div class="slide-title">Slide 2</div>
+        </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="/img/work3.jpg" class="img-fluid" alt="Image">
-      </div>
-      <div class="col-md-6">
-        <h2>3Titre du texte descriptif</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae odio nec lacus vulputate aliquet. Duis efficitur, urna vitae tincidunt dapibus, libero nunc pellentesque felis, ut malesuada lorem libero ac nunc.</p>
-      </div>
+
+    <div class="slider-controls">
+        <button onclick="prevSlide()">⬅ Slide</button>
+        <button onclick="nextSlide()">Slide ➡</button>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <button class="btn btn-danger">Consulter</button>
-        <button class="btn btn-success">Consulter</button>
-        <button class="btn btn-primary">Consulter</button>
-        <button class="btn btn-warning">Consulter</button>
-        <button class="btn btn-info">Consulter</button>
-        <button class="btn btn-secondary">Consulter</button>
-        <button class="btn btn-dark">Consulter</button>
-        <button class="btn btn-orange">Consulter</button>
-        <button class="btn btn-success">Consulter</button>
-        <button class="btn btn-dark">Consulter</button>
-      </div>
-    </div>
-  </div>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const slider = document.querySelector(".slider");
+
+    function updateSlidePosition() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlidePosition();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    }
+
+    let currentImages = [0, 0]; // Indice des images pour chaque slide
+    const carousels = document.querySelectorAll(".carousel");
+
+    function updateImagePosition(slideIndex) {
+        carousels[slideIndex].style.transform = `translateX(-${currentImages[slideIndex] * 100}%)`;
+    }
+
+    function nextImage(slideIndex) {
+        const images = carousels[slideIndex].children.length;
+        currentImages[slideIndex] = (currentImages[slideIndex] + 1) % images;
+        updateImagePosition(slideIndex);
+    }
+
+    function prevImage(slideIndex) {
+        const images = carousels[slideIndex].children.length;
+        currentImages[slideIndex] = (currentImages[slideIndex] - 1 + images) % images;
+        updateImagePosition(slideIndex);
+    }
+</script>
+
 </body>
 </html>
